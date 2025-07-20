@@ -3,5 +3,6 @@
     <style name="Base.Theme.IslamiC42GSunWed" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/gold</item>
     </style>
 </resources>
