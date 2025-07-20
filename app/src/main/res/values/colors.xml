@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gold">#FFE2BE7F</color>
+    <color name="blackWithOpacity60">#99202020</color>  <!--Alpha Red-Green-Blue  -->
+    <!--                A  RGB       -->
+    <!--                  RGB A-->
 </resources>
