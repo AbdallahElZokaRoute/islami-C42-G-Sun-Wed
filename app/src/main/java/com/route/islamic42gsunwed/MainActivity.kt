@@ -14,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // Finished Main Activity + Login
+        // Finished Main Activity +  Home Feature
     }
 }
