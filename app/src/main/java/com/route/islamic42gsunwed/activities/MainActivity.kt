@@ -8,7 +8,7 @@ import com.route.islamic42gsunwed.databinding.ActivityMainBinding
 import com.route.islamic42gsunwed.fragments.HadethFragment
 import com.route.islamic42gsunwed.fragments.quran.QuranFragment
 import com.route.islamic42gsunwed.fragments.RadioFragment
-import com.route.islamic42gsunwed.fragments.TasbeehFragment
+import com.route.islamic42gsunwed.fragments.tasabeeh.TasbeehFragment
 
 class MainActivity : AppCompatActivity() {
     // 0- Create new Project ( Islami )
