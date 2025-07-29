@@ -10,11 +10,18 @@ import com.route.islamic42gsunwed.databinding.FragmentTasbeehBinding
 
 class TasbeehFragment : Fragment() {
     private lateinit var binding: FragmentTasbeehBinding
+
+    private val azkarList = mutableListOf(
+        "سبجان الله",
+        "اللله أكبر",
+        "الحمدلله"
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTasbeehBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -24,7 +31,7 @@ class TasbeehFragment : Fragment() {
 
         // Initialize views and set click listeners here
         binding.azkarTimesTextView.text = "0"
-        binding.azkarTextView.text = "سبحان الله"
+        binding.azkarTextView.text = azkarList[0]
 
         binding.imageViewSebha.setOnClickListener {
             handleSebhaClick()
@@ -44,15 +51,13 @@ class TasbeehFragment : Fragment() {
         if (newCount == 33) {
             binding.azkarTimesTextView.text = "0"
 
-            when(binding.azkarTextView.text.toString()){
-                "سبحان الله" -> binding.azkarTimesTextView.text = "الله أكبر"
-                "الله أكبر" -> binding.azkarTimesTextView.text = "الحمد لله"
-                "الجمد لله" -> {
-                    binding.imageViewSebha.setImageResource(R.drawable.sebha)
-                    binding.azkarTimesTextView.text = "سبحان الله"
-                }
-            }
+            val currentIndex = azkarList.indexOf(binding.azkarTextView.text.toString())
+            val nextIndex = (currentIndex + 1) % azkarList.size // to loop back to the first element
+            binding.azkarTextView.text = azkarList[nextIndex]
 
+            if(currentIndex == azkarList.size-1){
+                binding.imageViewSebha.setImageResource(R.drawable.sebha)
+            }
         }
     }
 
