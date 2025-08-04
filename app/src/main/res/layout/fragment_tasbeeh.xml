@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/tasbeh_bg">
+<ImageView
+    android:id="@+id/islami_img"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:src="@drawable/islami_quran_image"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:adjustViewBounds="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHeight_percent=".15"
+    />
+    <ImageView
+        android:id="@+id/sebha_img"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/sebha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".6"
+        />
+    <TextView
+        android:id="@+id/tasbeh_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sobhan_allah"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/sebha_img"
+        app:layout_constraintTop_toTopOf="@id/sebha_img"
+        app:layout_constraintBottom_toBottomOf="@id/sebha_img"
+        app:layout_constraintEnd_toEndOf="@id/sebha_img"
+      android:textSize="24sp"
+        android:paddingTop="50dp"
+        android:paddingBottom="22dp"
 
+        />
+    <TextView
+        android:id="@+id/tasbeh_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_30"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/sebha_img"
+        app:layout_constraintTop_toBottomOf="@id/tasbeh_name"
+        app:layout_constraintBottom_toBottomOf="@id/tasbeh_name"
+        app:layout_constraintEnd_toEndOf="@id/sebha_img"
+        android:textSize="24sp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
