@@ -26,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent=".6"
+android:rotation="7"
         />
     <TextView
         android:id="@+id/tasbeh_name"
