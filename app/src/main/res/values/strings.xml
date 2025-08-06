@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Islami C42 G Sun Wed</string>
+    <string name="todo">TODO</string>
+    <string name="text">نص</string>
+    <string name="logo">TODO</string>
+    <string name="sebha1">TODO</string>
+    <string name="text1">الحمدالله</string>
+    <string name="_5">5</string>
 </resources>
