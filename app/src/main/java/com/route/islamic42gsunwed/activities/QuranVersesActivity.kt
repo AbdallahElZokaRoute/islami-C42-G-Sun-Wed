@@ -47,7 +47,9 @@ class QuranVersesActivity : AppCompatActivity() {
 
     fun readChapterContents(): List<String> {
         return assets.open("quran/$chapterIndex.txt").bufferedReader().use {
-            it.readLines()
+            it.readLines().filter {
+                it.isNotEmpty() && it.isNotBlank()
+            }
         }
     }
     /**

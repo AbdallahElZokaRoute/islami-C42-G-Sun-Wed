@@ -2,7 +2,7 @@
 <com.google.android.material.carousel.MaskableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.card.MaterialCardView
@@ -10,19 +10,33 @@
         android:layout_height="match_parent"
         app:cardBackgroundColor="@color/gold"
         app:cardCornerRadius="20dp"
-        app:contentPadding="20dp">
+        app:contentPadding="8dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <View
+                android:id="@+id/divider_start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/divider_end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent" />
+
             <ImageView
                 android:id="@+id/top_start_shape"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/hadeth_shape_start_corner"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/divider_start"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
@@ -30,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/hadeth_shape_end_corner"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/divider_end"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -49,13 +63,11 @@
 
             <ScrollView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/top_end_shape"
                 app:layout_constraintStart_toStartOf="@id/top_start_shape"
-                app:layout_constraintTop_toBottomOf="@id/hadeth_title"
-                app:layout_constraintVertical_bias="0">
-
+                app:layout_constraintTop_toBottomOf="@id/hadeth_title">
 
                 <TextView
                     android:id="@+id/hadeth_desc"

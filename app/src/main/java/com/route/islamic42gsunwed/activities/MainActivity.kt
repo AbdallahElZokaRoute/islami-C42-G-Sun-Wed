@@ -1,8 +1,10 @@
 package com.route.islamic42gsunwed.activities
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationBarView
 import com.route.islamic42gsunwed.R
 import com.route.islamic42gsunwed.databinding.ActivityMainBinding
 import com.route.islamic42gsunwed.fragments.hadeth.HadethFragment
@@ -23,23 +25,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initViews() {
-        binding.islamicBottomNavView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.navigation_quran -> pushFragment(QuranFragment())
-                R.id.navigation_hadeth -> pushFragment(HadethFragment())
-                R.id.navigation_tasbeeh -> pushFragment(TasbeehFragment())
-                R.id.navigation_radio -> pushFragment(RadioFragment())
+
+        binding.islamicBottomNavView.setOnItemSelectedListener(null)
+        binding.islamicBottomNavView.setOnItemSelectedListener(object :
+            NavigationBarView.OnItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when (item.itemId) {
+                    R.id.navigation_quran -> pushFragment(QuranFragment())
+                    R.id.navigation_hadeth -> pushFragment(HadethFragment())
+                    R.id.navigation_tasbeeh -> pushFragment(TasbeehFragment())
+                    R.id.navigation_radio -> pushFragment(RadioFragment())
+                }
+                return true
             }
-            return@setOnItemSelectedListener true
-        }
+        })
         binding.islamicBottomNavView.selectedItemId = R.id.navigation_quran
+
+//        binding.islamicBottomNavView.setOnItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.navigation_quran -> pushFragment(QuranFragment())
+//                R.id.navigation_hadeth -> pushFragment(HadethFragment())
+//                R.id.navigation_tasbeeh -> pushFragment(TasbeehFragment())
+//                R.id.navigation_radio -> pushFragment(RadioFragment())
+//            }
+//            return@setOnItemSelectedListener true
+//        }
+//        binding.islamicBottomNavView.selectedItemId = R.id.navigation_quran
     }
 
+    /// QuranFragment -> HadethFragment -  Tasbeeh Fragment -  Radio Fragment
     fun pushFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(
-            R.id.islamic_fragment_container,
-            fragment
-        ).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.islamic_fragment_container, fragment).addToBackStack(null)
+            .commit()
+        // Tasbeeh -> Back -> Quran -> back -> closes Application
+        // Navigation Component
 
     }
 }
