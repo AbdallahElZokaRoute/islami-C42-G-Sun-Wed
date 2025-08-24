@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Islami C42 G Sun Wed</string>
+    <string name="quran">Quran</string>
+    <string name="hadeeth">Hadeeth</string>
+    <string name="tasbeeh">Tasbeeh</string>
+    <string name="radio">Radio</string>
 </resources>

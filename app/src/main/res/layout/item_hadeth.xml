@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.carousel.MaskableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/gold"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="8dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/divider_start"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/divider_end"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/top_start_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hadeth_shape_start_corner"
+                app:layout_constraintStart_toStartOf="@id/divider_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/top_end_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hadeth_shape_end_corner"
+                app:layout_constraintEnd_toEndOf="@id/divider_end"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hadeth_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black3"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/top_start_shape"
+                app:layout_constraintEnd_toStartOf="@id/top_end_shape"
+                app:layout_constraintStart_toEndOf="@id/top_start_shape"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="الحديث الخمسون" />
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/top_end_shape"
+                app:layout_constraintStart_toStartOf="@id/top_start_shape"
+                app:layout_constraintTop_toBottomOf="@id/hadeth_title">
+
+                <TextView
+                    android:id="@+id/hadeth_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black3"
+                    android:textSize="22sp"
+                    tools:text="@tools:sample/lorem/random" />
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.carousel.MaskableFrameLayout>

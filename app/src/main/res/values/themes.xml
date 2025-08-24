@@ -3,6 +3,40 @@
     <style name="Base.Theme.IslamiC42GSunWed" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/gold</item>
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--50 Screen -> each screen has 1 button -> GOLD -> GREEN  -->
+        <!--
+                Primary color , Gold
+
+
+                                Green
+
+
+        Wednesday  ->Hadeth Carousel LayoutManager + ToDO App <-> Bottom App Bar
+
+        Sunday  -> Room
+         -->
+    </style>
+    <!--
+        class parent
+        class Child
+
+
+                Child                                                        Parent
+        Light / Dark Mode
+        Same XML component with different attributes
+
+     -->
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/blackWithOpacity60</item>
+
+    </style>
+
+    <style name="BottomNavView_Style">
+        <item name="android:background">@color/gold</item>
     </style>
 
     <style name="Theme.IslamiC42GSunWed" parent="Base.Theme.IslamiC42GSunWed" />
